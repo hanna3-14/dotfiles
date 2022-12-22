@@ -192,3 +192,6 @@ bar {
 # keyboard layouts
 bindsym $mod+Ctrl+Shift+F11 exec setxkbmap -layout de
 bindsym $mod+Ctrl+Shift+F12 exec setxkbmap -layout de -variant neo
+
+# set background image
+exec_always feh --bg-fill $HOME/.config/pictures/background.jpg
