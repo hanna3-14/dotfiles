@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = main
+[user]
+	name = "hanna3-14"
+	email = 114485436+hanna3-14@users.noreply.github.com
+	signingkey = 8D2899E692FB6E16
+[core]
+	editor = vim
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
