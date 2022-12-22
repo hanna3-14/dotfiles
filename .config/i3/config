@@ -188,3 +188,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# keyboard layouts
+bindsym $mod+Ctrl+Shift+F11 exec setxkbmap -layout de
+bindsym $mod+Ctrl+Shift+F12 exec setxkbmap -layout de -variant neo
