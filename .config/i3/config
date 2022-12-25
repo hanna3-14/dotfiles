@@ -210,3 +210,7 @@ bindsym $mod+Ctrl+Shift+F12 exec setxkbmap -layout de -variant neo
 
 # set background image
 exec_always feh --bg-fill $HOME/.config/pictures/background.jpg
+
+# change brightness
+bindsym XF86MonBrightnessUp exec "brightnessctl s 10%+"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-"
