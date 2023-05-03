@@ -4,6 +4,7 @@ These are my dotfiles, tracked with a bare git repository as described [here](ht
 
 Additionally, this repo contains some (useful) files:
 - [my personal Arch install guide](.files/installation_guide.md)
+- [how to sign your git commits](.files/signed_commits.md)
 
 ## initialize the repository for your dotfiles
 - `git init --bare $HOME/.dotfiles` init a bare git repository in your home directory
