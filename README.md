@@ -6,6 +6,11 @@ Additionally, this repo contains some (useful) files:
 - [my personal Arch install guide](.files/installation_guide.md)
 - [how to sign your git commits](.files/signed_commits.md)
 
+## low battery notification
+you might need to install some packages to be able to use my [low battery notification script](.bash-scripts/alert-battery.sh):
+
+`sudo pacman -S libnotify notification-daemon notify-osd`
+
 ## initialize the repository for your dotfiles
 - `git init --bare $HOME/.dotfiles` init a bare git repository in your home directory
 - `alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'` create an alias to track dotfiles
