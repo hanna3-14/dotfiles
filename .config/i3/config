@@ -219,3 +219,8 @@ bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-"
 # keycode 46 = l
 bindcode $mod+53 exec i3lockmore --image-fill $HOME/.config/pictures/i3lock.png
 
+# enable media control via headphone
+bindsym XF86AudioPlay exec "playerctl play-pause"
+bindsym XF86AudioNext exec "playerctl next"
+bindsym XF86AudioPrev exec "playerctl previous"
+
