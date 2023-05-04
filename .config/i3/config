@@ -217,4 +217,5 @@ bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-"
 
 # i3lock
 # keycode 46 = l
-bindcode $mod+53 exec i3lock -i $HOME/.config/pictures/i3lock.png
+bindcode $mod+53 exec i3lockmore --image-fill $HOME/.config/pictures/i3lock.png
+
