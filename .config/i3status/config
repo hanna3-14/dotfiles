@@ -1,0 +1,52 @@
+general {
+	colors = true
+	interval = 5
+}
+order += "ipv6"
+order += "wireless wlan0"
+order += "ethernet eth0"
+order += "volume master"
+order += "battery 0"
+order += "disk /"
+order += "load"
+order += "memory"
+order += "tztime local"
+wireless wlan0 {
+	format_up = "W: (%quality at %essid) %ip"
+	format_down = "W: down"
+}
+ethernet eth0 {
+	format_up = "E: %ip (%speed)"
+	format_down = "E: down"
+}
+volume master {
+	format = "♪: %volume %devicename"
+	device = "default"
+	mixer = "Master"
+}
+battery 0 {
+	format = "%status %percentage %remaining"
+	last_full_capacity = true
+	format_down = "No battery"
+	status_chr = "⚡ CHR"
+	status_bat = "🔋 BAT"
+	status_unk = "? UNK"
+	status_full = "☻ FULL"
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 10
+	threshold_type = "time"
+}
+disk "/" {
+	format = "DISK: %avail / %total"
+}
+load {
+	format = "LOAD: %1min"
+}
+memory {
+	format = "MEMORY: %used / %total"
+	threshold_degraded = "10%"
+	format_degraded = "MEMORY: %free"
+}
+tztime local {
+	format = "%a, %d.%m.%Y %H:%M"
+}
