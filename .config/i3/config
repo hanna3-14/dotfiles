@@ -206,6 +206,7 @@ bar {
 }
 
 # keyboard layouts
+exec_always "setxkbmap -layout de -variant neo"
 bindsym $mod+Ctrl+Shift+F11 exec setxkbmap -layout de
 bindsym $mod+Ctrl+Shift+F12 exec setxkbmap -layout de -variant neo
 
