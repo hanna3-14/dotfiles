@@ -25,7 +25,7 @@ end
 
 ## install dotfiles onto a new system
 - `alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'` create an alias to track dotfiles
-- `git clone --bare <git-repo-url> $HOME/.dotfiles` clone dotfiles into a bare repoitory
+- `git clone --bare https://github.com/hanna3-14/dotfiles $HOME/.dotfiles` clone dotfiles into a bare repository
 - `alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'` define the alias in the current shell scope
 - `config checkout`
 - `config config --local status.showUntrackedFiles no`
