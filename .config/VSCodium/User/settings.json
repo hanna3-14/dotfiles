@@ -1,3 +1,5 @@
 {
-	"files.insertFinalNewline": true
+	"files.insertFinalNewline": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always"
 }
