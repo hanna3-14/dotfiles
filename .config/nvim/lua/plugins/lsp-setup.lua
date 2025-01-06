@@ -19,7 +19,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local capabilities = require('cmp_nvim_lsp').default_capabilities() -- use LSP for suggestions in snipped window
+			local capabilities = require("cmp_nvim_lsp").default_capabilities() -- use LSP for suggestions in snipped window
 			local lspconfig = require("lspconfig")
 
 			lspconfig.lua_ls.setup({
@@ -27,6 +27,13 @@ return {
 			})
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
+				settings = {
+					["rust-analyzer"] = {
+						check = {
+							command = "clippy",
+						},
+					},
+				},
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -47,6 +54,13 @@ return {
 				},
 			})
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+		end,
+	},
+	-- add type annotations for rust
+	{
+		"simrat39/rust-tools.nvim",
+		config = function()
+			require("rust-tools").setup({})
 		end,
 	},
 }
