@@ -19,6 +19,10 @@
 		"format": "{percent}% {icon}",
 		"format-icons": ["", "", "", "", "", "", "", "", ""]
 	},
+	"custom/brightness": {
+		"exec": "~/.config/waybar/scripts/brightness.sh",
+		"restart-interval": 1,
+	},
 	"battery": {
 		"states": {
 			"warning": 30,

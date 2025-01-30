@@ -27,6 +27,7 @@
 			"cpu",
 			"memory",
 			"temperature",
+			"custom/brightness",
 			"battery",
 			"clock",
 		],
