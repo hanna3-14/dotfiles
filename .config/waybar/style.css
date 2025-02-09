@@ -61,6 +61,7 @@ button:hover {
 #network,
 #power-profiles-daemon,
 #cpu,
+#disk,
 #memory,
 #temperature,
 #battery,
@@ -116,6 +117,11 @@ button:hover {
 #cpu {
 	color: @yellow;
 	border-bottom: 2px solid @yellow;
+}
+
+#disk {
+	color: @green;
+	border-bottom: 2px solid @green;
 }
 
 #memory {

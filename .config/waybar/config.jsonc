@@ -3,8 +3,7 @@
 	{
 		"output": "eDP-1",
 		"include": ["~/.config/waybar/modules.json"],
-		"modules-left": ["hyprland/workspaces"],
-		"modules-center": ["hyprland/window"],
+		"modules-left": ["hyprland/workspaces", "hyprland/window"],
 		"modules-right": [
 			"bluetooth",
 			"pulseaudio",
@@ -17,14 +16,14 @@
 	{
 		"output": "DP-2",
 		"include": ["~/.config/waybar/modules.json"],
-		"modules-left": ["hyprland/workspaces"],
-		"modules-center": ["hyprland/window"],
+		"modules-left": ["hyprland/workspaces", "hyprland/window"],
 		"modules-right": [
 			"bluetooth",
 			"pulseaudio",
 			"network",
 			"power-profiles-daemon",
 			"cpu",
+			"disk",
 			"memory",
 			"temperature",
 			"custom/brightness",

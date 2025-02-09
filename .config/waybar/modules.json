@@ -7,6 +7,10 @@
 		"format": "{usage}% ",
 		"tooltip": false
 	},
+	"disk": {
+		"interval": 30,
+		"format": "{free} "
+	},
 	"memory": {
 		"format": "{}% "
 	},
@@ -21,7 +25,7 @@
 	},
 	"custom/brightness": {
 		"exec": "~/.config/waybar/scripts/brightness.sh",
-		"restart-interval": 1,
+		"restart-interval": 1
 	},
 	"battery": {
 		"states": {
@@ -80,6 +84,6 @@
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-		"on-click": "blueman-manager",
+		"on-click": "blueman-manager"
 	}
 }
