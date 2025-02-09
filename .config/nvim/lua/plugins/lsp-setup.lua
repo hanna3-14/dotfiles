@@ -24,6 +24,17 @@ return {
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+				settings = {
+					Lua = {
+						diagnostics = {
+							-- get the language server to recognize the `vim` global
+							globals = {
+								"vim",
+								"require",
+							},
+						},
+					},
+				},
 			})
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
