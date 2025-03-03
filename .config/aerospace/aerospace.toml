@@ -1,0 +1,6 @@
+# start AeroSpace at login
+start-at-login = true
+
+[mode.main.binding]
+	alt-enter = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~'
+	alt-q = 'close --quit-if-last-window'
