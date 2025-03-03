@@ -1,6 +1,13 @@
 # start AeroSpace at login
 start-at-login = true
 
+after-startup-command = ['exec-and-forget sketchybar']
+
+# notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
 [mode.main.binding]
 	alt-enter = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~'
 	alt-q = 'close --quit-if-last-window'
