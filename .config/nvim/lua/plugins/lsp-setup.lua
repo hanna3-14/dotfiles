@@ -11,7 +11,14 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "rust_analyzer", "marksman", "pyright", "gopls" },
+				ensure_installed = {
+					"lua_ls",
+					"rust_analyzer",
+					"marksman",
+					"pyright",
+					"gopls",
+					"angularls",
+				},
 			})
 		end,
 	},
@@ -74,6 +81,10 @@ return {
 						},
 					},
 				},
+			})
+			lspconfig.angularls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
