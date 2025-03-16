@@ -18,9 +18,10 @@ return {
 	-- configure LSPs and define key maps to communicate with LSPs
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { " saghen/blink.cmp" },
 		config = function()
-			local on_attach = require("cmp_nvim_lsp").on_attach
-			local capabilities = require("cmp_nvim_lsp").default_capabilities() -- use LSP for suggestions in snipped window
+			-- local on_attach = require("cmp_nvim_lsp").on_attach
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 			local util = require("lspconfig/util")
 

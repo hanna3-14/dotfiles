@@ -1,73 +1,44 @@
 return {
-	-- source for nvim-cmp
 	{
-		"hrsh7th/cmp-nvim-lsp",
-		config = function()
-			require("cmp").setup({
-				sources = {
-					{ name = "nvim_lsp" },
-				},
-			})
-		end,
-	},
-	-- LuaSnip is the snippet engine used by nvim-cmp
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
-		},
-	},
-	-- nvim-cmp is the snippet-window
-	{
-		"hrsh7th/nvim-cmp",
-		config = function()
-			-- Set up nvim-cmp.
-			local cmp = require("cmp")
-			require("luasnip.loaders.from_vscode").lazy_load()
+		"saghen/blink.cmp",
+		-- optional: provides snippets for the snippet source
+		dependencies = "rafamadriz/friendly-snippets",
 
-			cmp.setup({
-				snippet = {
-					-- REQUIRED - you must specify a snippet engine
-					expand = function(args)
-						require("luasnip").lsp_expand(args.body)
+		-- use a release tag to download pre-built binaries
+		version = "v0.*",
+
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = {
+			keymap = {
+				preset = "default",
+				["<Tab>"] = { "select_next", "fallback" },
+				["<S-Tab>"] = { "select_prev", "fallback" },
+				["<CR>"] = { "accept", "fallback" },
+
+				-- show with a list of providers
+				["<C-space>"] = {
+					function(cmp)
+						cmp.show({ providers = { "snippets" } })
 					end,
 				},
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif require("luasnip").expand_or_jumpable() then
-							require("luasnip").expand_or_jump()
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-						elseif require("luasnip").jumpable(-1) then
-							require("luasnip").jump(-1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-				}),
-				sources = cmp.config.sources({
-					{ name = "luasnip" },
-				}, {
-					{ name = "buffer" },
-				}),
-			})
-		end,
+			},
+
+			appearance = {
+				use_nvim_cmp_as_default = true,
+				nerd_font_variant = "mono",
+			},
+
+			signature = { enabled = true },
+
+			-- Default list of enabled providers defined so that you can extend it
+			-- elsewhere in your config, without redefining it, due to `opts_extend`
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
+
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+		opts_extend = { "sources.default" },
 	},
 }
