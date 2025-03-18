@@ -1,28 +1,10 @@
 return {
-  -- define which LSPs should be automatically installed by mason
-  {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = { "mason.nvim" },
-    opts = {
-      ensure_installed = { "angularls" },
-    },
-  },
-  -- configure LSPs and define key maps to communicate with LSPs
   {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
-    keys = {
-      {
-        "K",
-        vim.lsp.buf.hover,
-      },
-      {
-        "gd",
-        vim.lsp.buf.definition,
-      },
-      {
-        "<leader>ca",
-        vim.lsp.buf.code_action,
+    servers = {
+      angularls = {
+        mason = true,
       },
     },
     config = function()
